@@ -1,0 +1,225 @@
+/* === IMPORTS === */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/* 
+    http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 
+    End of CSS RESET
+*/
+/* === VARIABLES === */
+:root{
+    --main-font : 'vt323';
+
+    --black : #010203;
+    --ultramarine : #789CB1;
+    --ultramarine-dark : #09354F;
+    --white:#eef9ff;
+
+    
+}
+html{
+    font-size: 16px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--black);
+    font-family: var(--main-font);
+    font-size: 1.25rem;
+}
+main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+h1{
+    font-size: 2rem;
+    line-height: 150%;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 
+        -0.0625rem 0.0625rem var(--ultramarine-dark),
+        -0.125rem 0.125rem var(--ultramarine-dark),
+        -0.1875rem 0.1875rem var(--white),
+        -0.25rem 0.25rem var(--white);
+}
+h2{
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+.home{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--ultramarine);
+}
+.game{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: blueviolet;
+}
+.game-over{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color:chocolate;
+}
+.parameter{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: darkgray;
+}
+.hero-container{
+    display: flex;
+    flex-direction: column;
+}
+.hero-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 24rem;
+    overflow: hidden;
+}
+.hero-img{
+    width: 100%;
+}
+.hero-content{
+    padding: 0 1rem;
+}
+.rules-container{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 1rem;
+}
+.rules-hr{
+    justify-self: center;
+    margin: 1rem 0;
+    height: 0.125rem;
+    width: 50%;
+    background-color: var(--ultramarine-dark);
+    color: var(--ultramarine-dark);
+    border: none;
+}
+.rules-list{
+    margin-top: 1rem;
+}
+.rules-list-item{
+    margin: 0.5rem 0;
+}
+.nav-container{
+    padding: 0 1rem;
+}
+.secondary-btn-group{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.btn{
+    width: 100%;
+    height: 2rem;
+    font-family: var(--main-font);
+    font-size: 1.25rem;
+    color: var(--black);
+    border: 0.0625rem solid var(--ultramarine-dark);
+    box-shadow: 
+    -0.125rem 0 0 0 var(--ultramarine-dark),
+    0.125rem 0 0 0 var(--ultramarine-dark),
+    0 -0.125rem 0 0 var(--ultramarine-dark),
+    0 0.125rem 0 0 var(--ultramarine-dark);
+}
+.btn:focus, .btn:focus-visible, .btn:hover, .btn:target{
+    text-shadow: 
+        -0.0625rem 0.0625rem var(--ultramarine-dark),
+        -0.125rem 0.125rem var(--ultramarine-dark),
+        -0.1875rem 0.1875rem var(--white),
+        -0.25rem 0.25rem var(--white);
+    box-shadow: 
+    -0.125rem 0 0 0 var(--black),
+    -0.250rem 0 0 0 var(--ultramarine-dark),
+    0.125rem 0 0 0 var(--black),
+    0 -0.125rem 0 0 var(--black),
+    0 0.125rem 0 0 var(--black),
+    -0.250rem 0.250rem 0 0 var(--ultramarine-dark),
+    -0.375rem 0.375rem var(--white);
+}
+.hidden{
+    display: none;
+}
+@media (min-width: 768px){}
+@media (min-width: 1024px){
+    body{
+        font-size: 1.75rem;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    h2{
+        font-size: 2rem;
+        line-height: 150%;
+    }
+    .hero-container{
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+
+    }
+}
