@@ -11,50 +11,57 @@
 <body>
     <main>
         <section id="home" class="home">
-            <h1>SOS COAST GUARD</h1>
-            <div class="hero-container">
-                <div class="hero-img-container">
-                    <img src="./img/aquaman_in_a_bathtub_pixel_8.png" alt="Aquaman died in his bathtub"
-                        class="hero-img">
+            <div class="container">
+                <h1>SOS COAST GUARD</h1>
+                <div class="hero-container">
+                    <div class="hero-img-container">
+                        <img src="./img/aquaman_in_a_bathtub_pixel_8.png" alt="Aquaman died in his bathtub"
+                            class="hero-img">
+                    </div>
+                    <div class="hero-content">
+                        <h2 class="rules-title">BREAKING NEWS: DC TRAGEDY!</h2>
+                        <p class="rules-context">Aquaman is dead… And in the most ironic way possible. He drowned in his
+                            own bathtub. With no
+                            underwater superheroes left to do the job, the government had no choice but to reactivate
+                            its Coast Guard Service to rescue people at sea.</p>
+                        <!--<hr class="rules-hr">-->
+                    </div>
                 </div>
-                <div class="hero-content">
-                    <h2 class="rules-title">BREAKING NEWS: DC TRAGEDY!</h2>
-                    <p class="rules-context">Aquaman is dead… And in the most ironic way possible. He drowned in his
-                        own bathtub. With no
-                        underwater superheroes left to do the job, the government had no choice but to reactivate
-                        its
-                        Coast Guard Service to rescue people at sea.</p>
-                    <!--<hr class="rules-hr">-->
+                <div class="rules-container">
+                    <p class="rules-text"><span class="rules-accent">Your mission:</span> Take control of a
+                        fearless rescue boat and brave the dangers of the
+                        ocean!</p>
+                    <ul class="rules-list">
+                        <li class="rules-list-item">🪨 Avoid treacherous rocks.</li>
+                        <li class="rules-list-item">🌊 Dodge massive waves.</li>
+                        <li class="rules-list-item">🦈 Survive deadly shark attacks.</li>
+                        <li class="rules-list-item">👨‍🚒 Save as many shipwrecked souls as possible!</li>
+                    </ul>
+                    <p class="rules-conclusion">You're the last hope of the seas… Good luck, Captain! 🚢🔥</p>
                 </div>
-            </div>
-            <div class="rules-container">
-                <p class="rules-text"><span class="rules-accent">Your mission:</span> Take control of a
-                    fearless rescue boat and brave the dangers of the
-                    ocean!</p>
-                <ul class="rules-list">
-                    <li class="rules-list-item">🪨 Avoid treacherous rocks.</li>
-                    <li class="rules-list-item">🌊 Dodge massive waves.</li>
-                    <li class="rules-list-item">🦈 Survive deadly shark attacks.</li>
-                    <li class="rules-list-item">👨‍🚒 Save as many shipwrecked souls as possible!</li>
-                </ul>
-                <p class="rules-conclusion">You're the last hope of the seas… Good luck, Captain! 🚢🔥</p>
-            </div>
-            <nav class="nav-container">
-                <button id="start-btn" class="btn">START GAME</button>
-                <div class="secondary-btn-group">
-                    <button id="parameter-btn" class="btn">SETTINGS</button>
-                    <button id="show-score-btn" class="btn">SCOREBOARD</button>
-                </div>
+                <nav class="nav-container">
+                    <button id="start-btn" class="btn">START GAME</button>
+                    <div class="secondary-btn-group">
+                        <button id="parameter-btn" class="btn">SETTINGS</button>
+                        <button id="show-score-btn" class="btn">SCOREBOARD</button>
+                    </div>
+                </nav>
                 
-            </nav>
-            
+            </div>
+            <div class="footer">
+                <p class="footer-content">Coded by Whatcannydev</p>
+            </div>
         </section>
         <section id="game" class="game hidden">
-            Game page
-            <button id="game-parameter-btn">Parameters</button>
-            <button id="pause-btn">Pause</button>
-            <button id="quit-btn">Comeback Home</button>
-            <div id="game-screen"></div>
+            <div class="nav-game">
+                <button id="game-parameter-btn">Parameters</button>
+                <button id="pause-btn">Pause</button>
+                <button id="quit-btn">Comeback Home</button>
+            </div>
+            <div id="game-screen">
+                <div id="fixed-sky"></div>
+                <div id="infinite-scrolling"></div>
+            </div>
         </section>
         <section id="game-end" class="game-end hidden">Game end screen
             <button id="restart-btn">Restart</button>
@@ -70,6 +77,8 @@
     <!--
     <footer>Footer line</footer>
     -->
+    <script src="./js/src/player.js"></script>
+    <script src="./js/src/game.js"></script>
     <script src="./js/app.js"></script>
 </body>
 
