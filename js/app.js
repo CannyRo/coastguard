@@ -2,25 +2,25 @@ function app() {
     console.log("App is running with success");
     // Html Elements - Button
     const startGameBtn = document.getElementById("start-btn");
-    console.log(startGameBtn);
+    // console.log(startGameBtn);
     const pauseGameBtn = document.getElementById("pause-btn");
-    console.log(pauseGameBtn);
+    // console.log(pauseGameBtn);
     const quitGameBtn = document.getElementById("quit-btn");
-    console.log(quitGameBtn);
+    // console.log(quitGameBtn);
     const restartGameBtn = document.getElementById("restart-btn");
-    console.log(restartGameBtn);
+    // console.log(restartGameBtn);
 
     const showParameterBtn = document.getElementById("parameter-btn");
-    console.log(showParameterBtn);
+    // console.log(showParameterBtn);
     const showParameterFromGameBtn = document.getElementById("game-parameter-btn");
-    console.log(showParameterFromGameBtn);
+    // console.log(showParameterFromGameBtn);
     const updateParameterBtn = document.getElementById("update-parameter-btn");
-    console.log(updateParameterBtn);
+    // console.log(updateParameterBtn);
     
     const showScoreBtn = document.getElementById("show-score-btn");
-    console.log(showScoreBtn);
+    // console.log(showScoreBtn);
     const closeScoreBtn = document.getElementById("close-score-btn");
-    console.log(closeScoreBtn);
+    // console.log(closeScoreBtn);
 
     // Html Elements - Container
     const homePage = document.getElementById("home");
@@ -29,15 +29,21 @@ function app() {
     const parameterPage = document.getElementById("parameter");
     const scoreboardPage = document.getElementById("scoreboard");
     // Other global variables
-    // let game;
+    let game;
+    let player;
     // let parameter;
 
-    // Event Listener 
+    // Button Event Listener 
     startGameBtn.addEventListener("click", function(){
         console.log("Clic on start button");
-        startGame();
         gamePage.classList.remove("hidden");
         homePage.classList.add("hidden");
+        game = new Game();
+        startGame();
+        player = game.player;
+        player.getInfo();
+        // gamePage.classList.remove("hidden");
+        // homePage.classList.add("hidden");
     });
     pauseGameBtn.addEventListener("click", function(){
         console.log("Clic on pause button");
@@ -83,9 +89,26 @@ function app() {
         homePage.classList.remove("hidden");
     })
 
+    // Keyboard Event Listener
+    window.addEventListener("keydown", function(e){
+        // console.log(e);
+        if(e.code === "ArrowRight"){game.player.directionX = 3;}
+        if(e.code === "ArrowLeft"){game.player.directionX = -3;}
+        if(e.code === "ArrowUp"){game.player.directionY = 3;}
+        if(e.code === "ArrowDown"){game.player.directionY = -3;}
+    });
+    window.addEventListener("keyup", function(e){
+        // console.log(e);
+        if(e.code === "ArrowRight"){game.player.directionX = 0;}
+        if(e.code === "ArrowLeft"){game.player.directionX = 0;}
+        if(e.code === "ArrowUp"){game.player.directionY = 0;}
+        if(e.code === "ArrowDown"){game.player.directionY = 0;}
+    });
+
     // Functions
     function startGame() {
         console.log("startGame() is running");
+        game.start();
     }
     function pauseGame() {
         console.log("pauseGame() is running");
