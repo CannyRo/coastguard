@@ -19,7 +19,7 @@ class Obstacle {
         duration: 3000, // Duration of debuff milliseconds
         width: 116,
         height: 48,
-        srcImg: "./img/waves_anime.gif"
+        srcImg: "../img/waves_anime.gif"
       },
       {
         type: "rock",
@@ -29,7 +29,7 @@ class Obstacle {
         duration: 5000,
         width: 48,
         height: 48,
-        srcImg: "./img/rock_anime.gif"
+        srcImg: "../img/rock_anime.gif"
       },
       {
         type: "shark",
@@ -39,7 +39,7 @@ class Obstacle {
         duration: 0,
         width: 74,
         height: 136,
-        srcImg: "./img/shark_anime.gif"
+        srcImg: "../img/shark_anime.gif"
       },
       {
         type: "victim",
@@ -49,7 +49,7 @@ class Obstacle {
         duration: 0,
         width: 33,
         height: 37,
-        srcImg: "./img/victim_anime.gif"
+        srcImg: "../img/victim_anime.gif"
       }
     ];
     this.notRandomIndex = isVictim !== true ? Math.floor(Math.random() * this.obstaclesArray.length) : 3;
