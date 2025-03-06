@@ -1,14 +1,10 @@
 function app() {
-    console.log("App is running with success");
     // Html Elements - Button
     const startGameBtn = document.getElementById("start-btn");
-    // console.log(startGameBtn);
+
     const pauseGameBtn = document.getElementById("pause-btn");
-    // console.log(pauseGameBtn);
     const quitGameBtn = document.getElementById("quit-btn");
-    // console.log(quitGameBtn);
     const restartGameBtn = document.getElementById("restart-btn");
-    // console.log(restartGameBtn);
 
     const showParameterBtn = document.getElementById("parameter-btn");
     // console.log(showParameterBtn);
@@ -35,13 +31,13 @@ function app() {
 
     // Button Event Listener 
     startGameBtn.addEventListener("click", function(){
-        console.log("Clic on start button");
-        gamePage.classList.remove("hidden");
-        homePage.classList.add("hidden");
-        game = new Game();
+        // console.log("Clic on start button");
+        // gamePage.classList.remove("hidden");
+        // homePage.classList.add("hidden");
+        // game = new Game();
         startGame();
-        player = game.player;
-        player.getInfo();
+        // player = game.player;
+        // player.getInfo();
         // gamePage.classList.remove("hidden");
         // homePage.classList.add("hidden");
     });
@@ -92,10 +88,10 @@ function app() {
     // Keyboard Event Listener
     window.addEventListener("keydown", function(e){
         // console.log(e);
-        if(e.code === "ArrowRight"){game.player.directionX = 3;}
-        if(e.code === "ArrowLeft"){game.player.directionX = -3;}
-        if(e.code === "ArrowUp"){game.player.directionY = 3;}
-        if(e.code === "ArrowDown"){game.player.directionY = -3;}
+        if(e.code === "ArrowRight"){game.player.directionX = 4;}
+        if(e.code === "ArrowLeft"){game.player.directionX = -4;}
+        if(e.code === "ArrowUp"){game.player.directionY = 4;}
+        if(e.code === "ArrowDown"){game.player.directionY = -4;}
     });
     window.addEventListener("keyup", function(e){
         // console.log(e);
@@ -107,8 +103,12 @@ function app() {
 
     // Functions
     function startGame() {
-        console.log("startGame() is running");
+        // console.log("startGame() is running");
+        gamePage.classList.remove("hidden");
+        homePage.classList.add("hidden");
+        game = new Game();
         game.start();
+        player = game.player;
     }
     function pauseGame() {
         console.log("pauseGame() is running");
@@ -118,6 +118,15 @@ function app() {
     }
     function restartGame(){
         console.log("restartGame() is running");
+        gamePage.classList.remove("hidden");
+        gameEndPage.classList.add("hidden");
+        game = new Game();
+        game.start();
+        player = game.player;
+        // game = new Game();
+        // game.start();
+
+        
     }
     function showParameters() {
         console.log("showParameters() is running");
