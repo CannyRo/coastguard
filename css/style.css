@@ -143,13 +143,11 @@ table {
 /* === VARIABLES === */
 :root {
     --main-font: 'vt323';
-
     --black: #010203;
     --ultramarine: #789CB1;
     --ultramarine-dark: #09354F;
+    --background-blue : #5c8ec3;
     --white: #eef9ff;
-
-
 }
 
 html {
@@ -188,15 +186,12 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    /* line-height: 150%; */
 }
 
 .home {
     position: absolute;
     top: 0;
     right: 0;
-    /* bottom: 0; */
-    /* left: 0; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -207,34 +202,28 @@ h2 {
 
 .game {
     position: absolute;
-    /* top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; */
     width: 100%;
     max-width: 64rem;
     height: 100vh;
     max-height: 100vh;
-    /* transform: translateX(32rem- 50%); */
-    background-color: blueviolet;
-    /* overflow: hidden; */
+    background-color: var(--background-blue);
 }
 
 .game-over {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    width: 100%;
+    max-width: 64rem;
+    height: 100vh;
+    max-height: 100vh;
     background-color: chocolate;
 }
 
 .parameter {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    width: 100%;
+    max-width: 64rem;
+    height: 100vh;
+    max-height: 100vh;
     background-color: darkgray;
 }
 
@@ -268,8 +257,6 @@ h2 {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    /* align-items: center; */
-    /* padding: 1rem; */
 }
 
 .rules-hr {
@@ -287,9 +274,7 @@ h2 {
 }
 
 .nav-container {
-    /* padding: 0 1rem; */
     margin-top: 2rem;
-    /* padding-bottom: 2rem; */
 }
 
 .secondary-btn-group {
@@ -343,14 +328,7 @@ h2 {
     height: 100vh;
     display: flex;
     justify-content: center;
-    /* align-items: flex-end; */
     overflow: hidden;
-
-    /* background-image: url('../img/background_mowable_copy.png'); */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* animation: slide 16s linear infinite; */
 }
 #fixed-sky{
     z-index: 1;
@@ -366,10 +344,8 @@ h2 {
     background-size: contain;
 }
 #infinite-scrolling{
-    /* width: 100%; */
     min-width: 100%;
     min-height: 300vh;
-    /* min-height: 5760px; */
     background-image:url('../img/background_mowable.png');
     background-size:100% 33%;
     background-repeat:repeat-y;
@@ -379,8 +355,6 @@ h2 {
 
 @keyframes slide {
     0% {
-        /* transform: translate3d(0, -1920px, 0); */
-        /* transform: translate3d(0, -2060px, 0); */
         transform: translate3d(0, -100vh, 0);
     }
     100% {
@@ -401,7 +375,6 @@ h2 {
     display: flex;
     position: absolute;
     z-index: 2;
-    /* padding: 0 auto; */
     margin: 0 auto;
     width: 100%;
     justify-content: center;
@@ -414,7 +387,6 @@ h2 {
     display: none;
 }
 
-@media (min-width: 768px) {}
 
 @media (min-width: 1024px) {
     body {
@@ -427,7 +399,6 @@ h2 {
     h2 {
         margin-top: -0.5rem;
         font-size: 2rem;
-        /* line-height: 150%; */
     }
     .hero-container {
         display: grid;
@@ -436,8 +407,6 @@ h2 {
     }
     .hero-container {
         gap: 1rem;
-        /* align-items: flex-start; */
-        /* padding: 1rem; */
     }
     .hero-content {
         margin-top: 0;
