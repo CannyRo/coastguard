@@ -46,13 +46,20 @@
                         <button id="show-score-btn" class="btn">SCOREBOARD</button>
                     </div>
                 </nav>
-                
+
             </div>
             <div class="footer">
                 <p class="footer-content">Coded by Whatcannydev</p>
             </div>
         </section>
         <section id="game" class="game hidden">
+            <div class="score-banner">
+                <div class="score-area">
+                    <p>Survivors : <span id="survivors">0</span></p>
+                    <p>Score : <span id="score">0</span></p>
+                </div>
+                <p class="">Lives : <span id="lives">5</span></p>
+            </div>
             <div class="nav-game">
                 <button id="game-parameter-btn">Parameters</button>
                 <button id="pause-btn">Pause</button>
@@ -63,7 +70,7 @@
                 <div id="infinite-scrolling"></div>
             </div>
         </section>
-        <section id="game-end" class="game-end hidden">Game end screen
+        <section id="game-end" class="game-end hidden">Game Over
             <button id="restart-btn">Restart</button>
         </section>
         <section id="parameter" class="parameter hidden">Parameters page
@@ -77,6 +84,7 @@
     <!--
     <footer>Footer line</footer>
     -->
+    <script src="./js/src/obstacle.js"></script>
     <script src="./js/src/player.js"></script>
     <script src="./js/src/game.js"></script>
     <script src="./js/app.js"></script>
