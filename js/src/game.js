@@ -14,7 +14,7 @@ class Game {
       this.gameSky,
       48,
       116,
-      "../img/boat_anime_v1.gif"
+      "./img/boat_anime_v1.gif"
     );
     this.height = 100;
     this.width = 100;
