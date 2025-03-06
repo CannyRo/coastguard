@@ -1,5 +1,5 @@
 class Obstacle {
-  constructor(gameScreen, isVictim) {
+  constructor(gameScreen, isVictim, difficulty) {
     this.gameScreen = gameScreen;
     this.gameScreenData = gameScreen.getBoundingClientRect();
     this.screenWidth = this.gameScreenData.width;
@@ -8,8 +8,7 @@ class Obstacle {
     // this.gameSkyData = gameSky.getBoundingClientRect();
     // this.skyWidth = this.gameSkyData.width;
     // this.skyHeight = this.gameSkyData.height;
-    this.speed = 1;
-    this.collision = false;
+    
     // All type of obstacles
     this.obstaclesArray = [
       {
@@ -69,8 +68,17 @@ class Obstacle {
     this.element.style.top = `${this.top}px`;
 
     this.gameScreen.appendChild(this.element);
+
+    //
+    // this.foo = document.createElement("p");
+    // this.foo.innerText = this.speed;
+    // this.element.appendChild(this.foo);
+    this.difficulty = difficulty;
+    this.speed = difficulty <= 1 ? 1 : Math.pow(1.1, this.difficulty);
+    this.collision = false;
   }
   move() {
+    console.log(this.speed);
     if(this.detail.type === "wave"){
       this.top += (3 * this.speed);
     }
