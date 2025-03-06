@@ -54,21 +54,32 @@ class Game {
   gameLoop() {
     // console.log("gameLoop() from Game class");
     this.counter ++;
+    // console.log(this.counter);
     //
-    console.log("Sum of obstacles : ", this.obstacles.length);
-    if(this.counter % 30 === 0) {
+    // console.log("Sum of obstacles : ", this.obstacles.length);
+    if(this.counter % 60 === 0) {
       // The longer you stay in the game, the more points you earn
       this.score ++;
       this.scoreElement.innerText = this.score;
     }
+    let myLevel = 1;
+    // if(this.score % 100 === 0 ) {
+    //   console.log("My score should up 1 level");
+    //   console.log("myLevel before: ", myLevel);
+    //   myLevel += 1;
+    //   console.log("myLevel after: ", myLevel);
+    // }
     if(this.counter % 75 === 0) {
-      this.obstacles.push(new Obstacle(this.gameScreen, true));
+      console.log("myLevel : ", myLevel);
+      this.obstacles.push(new Obstacle(this.gameScreen, true, myLevel));
     }
     if(this.counter % 120 === 0) {
-      this.obstacles.push(new Obstacle(this.gameScreen, false));
+      console.log("myLevel : ", myLevel);
+      this.obstacles.push(new Obstacle(this.gameScreen, false, myLevel));
     }
     if( this.gameScreen.getBoundingClientRect().width >= 1000 && this.counter % 80 === 0) {
-      this.obstacles.push(new Obstacle(this.gameScreen, false));
+      console.log("myLevel : ", myLevel);
+      this.obstacles.push(new Obstacle(this.gameScreen, false, myLevel));
     }
     
     this.update();
@@ -83,22 +94,19 @@ class Game {
     this.player.move();
     // update each obstacle
     for(let i = 0; i< this.obstacles.length; i++) {
-      const obstacle = this.obstacles[i]; 
+      const obstacle = this.obstacles[i];
+      // if(this.score % 10 == 0){
+      //   obstacle.speed += 1;
+      // }
       obstacle.move();
       let localInterval;
       // check the collisions
       if(this.player.didCollide(obstacle)){
-        console.log("bang");
-        console.log(obstacle);
-        // obstacle.collision = true;
-        // if(obstacle.collision){
-        //   console.log("TRUE bang!!! : ", obstacle.collision);
-        // }
         // type of obstacle
         if(obstacle.detail.type === "wave" && obstacle.collision === false){
           obstacle.collision = true;
-          console.log("A WAVE affect us!");
-          if(this.survivors > 0){
+          // console.log("A WAVE affect us!");
+          if(this.survivors > 2){
             this.survivors -= obstacle.detail.victim;
             this.survivorElement.innerText = this.survivors;
           }
@@ -107,7 +115,7 @@ class Game {
         }
         if(obstacle.detail.type === "rock" && obstacle.collision === false){
           obstacle.collision = true;
-          console.log("A ROCK affect us!");
+          // console.log("A ROCK affect us!");
           this.lives--;
           this.livesElement.innerText = this.lives;
           if(this.lives === 0){
@@ -116,7 +124,7 @@ class Game {
         }
         if(obstacle.detail.type === "shark" && obstacle.collision === false){
           obstacle.collision = true;
-          console.log("A SHARK affect us!");
+          // console.log("A SHARK affect us!");
           if(this.survivors > 0){
             this.survivors -= obstacle.detail.victim;;
             this.survivorElement.innerText = this.survivors;
@@ -129,7 +137,7 @@ class Game {
         }
         if(obstacle.detail.type === "victim" && obstacle.collision === false){
           obstacle.collision = true;
-          console.log("It's a VICTIM!!! Help us!!!");
+          // console.log("It's a VICTIM!!! Help us!!!");
           this.survivors += 1;
           this.survivorElement.innerText = this.survivors;
           this.obstacles.splice(i, 1); // remove from the array obstacles

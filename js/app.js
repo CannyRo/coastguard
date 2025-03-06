@@ -2,9 +2,10 @@ function app() {
     // Html Elements - Button
     const startGameBtn = document.getElementById("start-btn");
 
-    const pauseGameBtn = document.getElementById("pause-btn");
+    const playGameBtn = document.getElementById("play-btn");
     const quitGameBtn = document.getElementById("quit-btn");
     const restartGameBtn = document.getElementById("restart-btn");
+    const homeGameBtn = document.getElementById("home-btn");
 
     const showParameterBtn = document.getElementById("parameter-btn");
     // console.log(showParameterBtn);
@@ -24,6 +25,8 @@ function app() {
     const gameEndPage = document.getElementById("game-end");
     const parameterPage = document.getElementById("parameter");
     const scoreboardPage = document.getElementById("scoreboard");
+
+    const navButtonsContainer = document.getElementById("nav-game"); 
     // Other global variables
     let game;
     let player;
@@ -31,29 +34,22 @@ function app() {
 
     // Button Event Listener 
     startGameBtn.addEventListener("click", function(){
-        // console.log("Clic on start button");
-        // gamePage.classList.remove("hidden");
-        // homePage.classList.add("hidden");
-        // game = new Game();
         startGame();
-        // player = game.player;
-        // player.getInfo();
-        // gamePage.classList.remove("hidden");
-        // homePage.classList.add("hidden");
     });
-    pauseGameBtn.addEventListener("click", function(){
-        console.log("Clic on pause button");
-        pauseGame();
+    playGameBtn.addEventListener("click", function(){
+        playGame(); // Go back in game after a pause (Esc)
     });
     quitGameBtn.addEventListener("click", function(){
-        console.log("Clic on quit button");
+        // console.log("Clic on quit button");
         quitGame();
-        gamePage.classList.add("hidden");
-        homePage.classList.remove("hidden");
     });
     restartGameBtn.addEventListener("click", function(){
         console.log("Clic on Restart button");
         restartGame();
+    });
+    homeGameBtn.addEventListener("click", function(){
+        gameEndPage.classList.add("hidden");
+        homePage.classList.remove("hidden");
     });
 
     showParameterBtn.addEventListener("click", function(){
@@ -88,10 +84,15 @@ function app() {
     // Keyboard Event Listener
     window.addEventListener("keydown", function(e){
         // console.log(e);
+        // player direction
         if(e.code === "ArrowRight"){game.player.directionX = 4;}
         if(e.code === "ArrowLeft"){game.player.directionX = -4;}
         if(e.code === "ArrowUp"){game.player.directionY = 4;}
         if(e.code === "ArrowDown"){game.player.directionY = -4;}
+        // escape / pause
+        if(e.code === "Escape"){
+            pauseGame();
+        }
     });
     window.addEventListener("keyup", function(e){
         // console.log(e);
@@ -112,9 +113,19 @@ function app() {
     }
     function pauseGame() {
         console.log("pauseGame() is running");
+        console.log(game);
+        clearInterval(game.gameIntervalId);
+        navButtonsContainer.classList.remove("hidden");
+    }
+    function playGame() {
+        navButtonsContainer.classList.add("hidden");
+        game.gameIntervalId = setInterval(() => {
+            game.gameLoop();
+        }, game.gameLoopFrequency);
     }
     function quitGame(){
         console.log("quitGame() is running");
+        game.gameOver();
     }
     function restartGame(){
         console.log("restartGame() is running");

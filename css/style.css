@@ -398,11 +398,15 @@ h2 {
     font-weight: 500;
 }
 .nav-game {
-    display: none;
+    display: flex;
     position: absolute;
     z-index: 2;
     /* padding: 0 auto; */
     margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
 }
 
 /* === === === ===*/
