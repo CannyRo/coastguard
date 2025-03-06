@@ -172,7 +172,7 @@ main {
     background-color: var(--ultramarine);
 }
 
-h1 {
+.big-title {
     margin: 0 1rem;
     font-size: 2rem;
     line-height: 150%;
@@ -210,13 +210,17 @@ h2 {
     background-color: var(--background-blue);
 }
 
-.game-over {
+.game-end {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
     width: 100%;
     max-width: 64rem;
     height: 100vh;
     max-height: 100vh;
-    background-color: chocolate;
+    background-color: var(--ultramarine);
 }
 
 .parameter {
@@ -289,7 +293,7 @@ h2 {
 .secondary-btn-group {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin: 1rem 0;
 }
 
 .btn {
@@ -401,7 +405,7 @@ h2 {
     body {
         font-size: 1.75rem;
     }
-    h1 {
+    .big-title {
         font-size: 2.5rem;
     }
     .title-container{

@@ -15,10 +15,10 @@
             <div class="container">
                 <div class="title-container">
                     <img src="./img/favicon.svg" alt="rubber ring" class="title-icon">
-                    <h1>SOS COAST GUARD</h1>
+                    <h1 class="big-title">SOS COAST GUARD</h1>
                     <img src="./img/favicon.svg" alt="rubber ring" class="title-icon">
                 </div>
-                
+
                 <div class="hero-container">
                     <div class="hero-img-container">
                         <img src="./img/aquaman_in_a_bathtub_pixel_8.png" alt="Aquaman died in his bathtub"
@@ -48,8 +48,8 @@
                 <nav class="nav-container">
                     <button id="start-btn" class="btn">START GAME</button>
                     <div class="secondary-btn-group">
-                        <button id="parameter-btn" class="btn">SETTINGS</button>
-                        <button id="show-score-btn" class="btn">SCOREBOARD</button>
+                        <button id="parameter-btn" class="btn" disabled>SETTINGS</button>
+                        <button id="show-score-btn" class="btn" disabled>SCOREBOARD</button>
                     </div>
                 </nav>
 
@@ -67,7 +67,7 @@
                 <p class="">Lives : <span id="lives">5</span></p>
             </div>
             <div id="nav-game" class="nav-game hidden">
-                <button id="game-parameter-btn">Parameters</button>
+                <button id="game-parameter-btn" disabled>Parameters</button>
                 <button id="play-btn">Play</button>
                 <button id="quit-btn">Leave</button>
             </div>
@@ -76,9 +76,21 @@
                 <div id="infinite-scrolling"></div>
             </div>
         </section>
-        <section id="game-end" class="game-end hidden">Game Over
-            <button id="restart-btn">Restart</button>
-            <button id="home-btn">Go home</button>
+        <section id="game-end" class="game-end hidden">
+            <h2 class="big-title">Game Over</h2>
+            <sub>In spite of everything, the country congratulates you on your help.</sub>
+            <div class="secondary-btn-group">
+                <button id="restart-btn" class="btn">Restart</button>
+                <button id="home-btn" class="btn">Back Home</button>
+            </div>
+            <div class="hero-img-container">
+                <img src="./img/ending_level_pixel_8.png"
+                    alt="The port authorities salute and thank you for your bravery under the setting sun"
+                    class="hero-img">
+            </div>
+            <div id="feedback" class="feedback-container">
+                
+            </div>
         </section>
         <section id="parameter" class="parameter hidden">Parameters page
             <button id="update-parameter-btn">Update Parameters</button>
