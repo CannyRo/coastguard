@@ -173,6 +173,7 @@ main {
 }
 
 h1 {
+    margin: 0 1rem;
     font-size: 2rem;
     line-height: 150%;
     font-weight: 500;
@@ -231,7 +232,14 @@ h2 {
     padding: 0 1rem 2rem 1rem;
     width: 100%;
 }
-
+.title-container{
+    display: flex;
+    justify-content: center;
+}
+.title-icon{
+    width: 2rem;
+    height: auto;
+}
 .hero-container {
     display: grid;
 }
