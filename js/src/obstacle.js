@@ -3,11 +3,6 @@ class Obstacle {
     this.gameScreen = gameScreen;
     this.gameScreenData = gameScreen.getBoundingClientRect();
     this.screenWidth = this.gameScreenData.width;
-    // this.screenHeight = this.gameScreenData.height;
-    // this.gameSky = gameSky;
-    // this.gameSkyData = gameSky.getBoundingClientRect();
-    // this.skyWidth = this.gameSkyData.width;
-    // this.skyHeight = this.gameSkyData.height;
     
     // All type of obstacles
     this.obstaclesArray = [
@@ -19,7 +14,7 @@ class Obstacle {
         duration: 3000, // Duration of debuff milliseconds
         width: 116,
         height: 48,
-        srcImg: "../../img/waves_anime.gif"
+        srcImg: "./img/waves_anime.gif"
       },
       {
         type: "rock",
@@ -29,7 +24,7 @@ class Obstacle {
         duration: 5000,
         width: 48,
         height: 48,
-        srcImg: "../../img/rock_anime.gif"
+        srcImg: "./img/rock_anime.gif"
       },
       {
         type: "shark",
@@ -39,7 +34,7 @@ class Obstacle {
         duration: 0,
         width: 74,
         height: 136,
-        srcImg: "../../img/shark_anime.gif"
+        srcImg: "./img/shark_anime.gif"
       },
       {
         type: "victim",
@@ -49,16 +44,17 @@ class Obstacle {
         duration: 0,
         width: 33,
         height: 37,
-        srcImg: "../../img/victim_anime.gif"
+        srcImg: "./img/victim_anime.gif"
       }
     ];
+    // We can create directly victim to rescue or randomly obstacles with the possibility to 
     this.notRandomIndex = isVictim !== true ? Math.floor(Math.random() * this.obstaclesArray.length) : 3;
     this.detail = this.obstaclesArray[this.notRandomIndex];
     this.width = this.detail.width;
     this.height = this.detail.height;
     this.left = Math.floor(Math.random() * (this.screenWidth - this.width));
     this.top = 0;
-    
+    // Create and append the Html Element
     this.element = document.createElement("img");
     this.element.src = this.detail.srcImg;
     this.element.style.position = "absolute";
@@ -66,19 +62,14 @@ class Obstacle {
     this.element.style.height = `${this.height}px`;
     this.element.style.left = `${this.left}px`;
     this.element.style.top = `${this.top}px`;
-
     this.gameScreen.appendChild(this.element);
-
-    //
-    // this.foo = document.createElement("p");
-    // this.foo.innerText = this.speed;
-    // this.element.appendChild(this.foo);
+    // Others variables usefull
     this.difficulty = difficulty;
     this.speed = difficulty <= 1 ? 1 : Math.pow(1.1, this.difficulty);
     this.collision = false;
   }
   move() {
-    console.log(this.speed);
+    // console.log(this.speed);
     if(this.detail.type === "wave"){
       this.top += (3 * this.speed);
     }
@@ -87,13 +78,8 @@ class Obstacle {
     }
     if(this.detail.type === "shark"){
       this.top += (3 * this.speed);
-      // We assume that a shark could swim to left or right without linearity
-      // const possibilities = [-3, -2, -1, 1, 2, 3];
-      // const randomIndex = Math.floor(Math.random() * possibilities.length);
       let randomLeftOrRightSwim =  Math.random() * 2 - 1;
       this.left += randomLeftOrRightSwim;
-      // this.left += possibilities[randomIndex];
-      // console.log(randomLeftOrRightSwim);
     }
     this.updatePosition();
   }
