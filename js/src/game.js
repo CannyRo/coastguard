@@ -216,7 +216,7 @@ class Game {
             const myRow = document.createElement("tr");
             myRow.innerHTML = `
             <td>${index + 1}</td>
-            <td><input type="text" placeholder="Votre nom" id="myInput" class="discreet-input"></td>
+            <td><input type="text" placeholder="Votre nom" id="myInput" class="discreet-input" autocomplete="off"></td>
             <td>${rank.score}</td>
           `;
           tbodyElement.appendChild(myRow);
