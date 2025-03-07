@@ -100,11 +100,18 @@ function app() {
         }, game.gameLoopFrequency);
     }
     function quitGame(){
+        navButtonsContainer.classList.add("hidden");
         game.gameOver();
     }
     function restartGame(){
         gamePage.classList.remove("hidden");
         gameEndPage.classList.add("hidden");
+        //
+        clearInterval(game.gameIntervalId);
+        game.player.element.remove();
+        game.obstacles.forEach((obstacle) => obstacle.element.remove());
+        //
+        game
         game = new Game();
         game.start();
         player = game.player;

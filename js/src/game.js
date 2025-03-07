@@ -21,13 +21,14 @@ class Game {
     this.width = 100;
     this.obstacles = [];
     this.score = 0;
-    this.lives = 3;
+    this.lives = 5;
     this.survivors = 0;
     this.gameIsOver = false;
     this.gameIntervalId;
     this.gameLoopFrequency = Math.round(1000 / 60); // 60fps
     this.counter = 0;
     this.highScores = JSON.parse(localStorage.getItem("high-scores")) || [];
+    this.level = 1;
   }
   start() {
     // To insure the reset of this values to restart
