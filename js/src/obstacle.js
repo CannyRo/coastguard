@@ -65,7 +65,7 @@ class Obstacle {
     this.gameScreen.appendChild(this.element);
     // Others variables usefull
     this.difficulty = difficulty;
-    this.speed = difficulty <= 1 ? 1 : Math.pow(1.1, this.difficulty);
+    this.speed = difficulty <= 1 ? 1 : Math.pow(1.2, this.difficulty);
     this.collision = false;
   }
   move() {
