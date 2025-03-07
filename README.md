@@ -60,7 +60,7 @@ Your game must meet the following technical requirements:
 
 - Live Site URL: [Click here](https://cannyro.github.io/coastguard/)
 - Solution Repository URL: [Click here](https://github.com/CannyRo/coastguard)
-- Slides Presentation URL: [Click here]()
+- Slides Presentation URL: [Click here](https://docs.google.com/presentation/d/1fsKTGn16wZtMOAZnocv6NMPXU1Y4Bc5f/edit?usp=sharing&ouid=101048073472360662042&rtpof=true&sd=true)
 
 ## My process
 
