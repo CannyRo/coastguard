@@ -57,6 +57,8 @@ class Game {
   gameLoop() {
     this.counter++;
     // console.log(this.counter);
+    // console.log(this.level);
+
     if (this.counter % 60 === 0) {
       // The longer you stay in the game, the more points you earn
       this.score++;
