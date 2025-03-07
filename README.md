@@ -2,24 +2,25 @@
 
 This is the first project of my [Ironhack](https://www.ironhack.com/fr-en/web-development/paris) journey - The Game.
 
-This is a solution to the [Product preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
-
 ## Table of contents
 
 - [Overview](#overview)
+  - [Screenshot](#screenshot)
   - [Context](#context)
   - [The challenge](#the-challenge)
   - [Deliverable Expected](#deliverable-expected)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
+- [Credit](#credit)
 
 ## Overview
+
+### Screenshot
+
+![](./img/screenshot.jpg)
 
 ### Context
 
@@ -55,14 +56,10 @@ Your game must meet the following technical requirements:
 - The URL of the slides for your project presentation.
 - You must present your game during Module 1 project presentations (last day of Module 1 project).
 
-### Screenshot
-
-![](./screenshot.jpg)
-
 ### Links
 
-- Live Site URL: [Click here]()
-- Solution Repository URL: [Click here]()
+- Live Site URL: [Click here](https://cannyro.github.io/coastguard/)
+- Solution Repository URL: [Click here](https://github.com/CannyRo/coastguard)
 - Slides Presentation URL: [Click here]()
 
 ## My process
@@ -72,15 +69,6 @@ Your game must meet the following technical requirements:
 - Semantic HTML5 markup
 - CSS custom properties
 - OOP Javascript
-- ...
-
-### What I learned
-
-...
-
-### Continued development
-
-...
 
 ### Useful resources
 
@@ -94,3 +82,6 @@ Your game must meet the following technical requirements:
 
 - GitHub - [@CannyRo](https://github.com/CannyRo)
 - LinkedIn - [Ronan CANNY](https://www.linkedin.com/in/ronan-canny-b29443277/)
+
+## Credit
+
